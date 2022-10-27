@@ -1,0 +1,14 @@
+syntax = "proto3";
+option php_namespace = "App\\Proto\\Notifications";
+option php_metadata_namespace = "App\\Proto\\Metadata\\Notifications";
+option go_package = "github.com/phroggyy/protoc-php-failure-sample/dist/go/protos/auth";
+
+import "User.proto";
+
+message GetUserRequest {
+    string token = 1;
+}
+
+service AuthService {
+    rpc GetUser(GetUserRequest) returns (User);
+}
